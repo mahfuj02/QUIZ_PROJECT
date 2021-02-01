@@ -1,0 +1,34 @@
+#container {
+	width: 800px;
+	height: auto;
+}
+
+.row {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #AFAFAF;
+}
+.id{
+	left: 10%;
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	color: azure;
+}
+
+.name {
+	color: azure;
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	line-height: 45px;
+}
+
+.score {
+	color: azure;
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}

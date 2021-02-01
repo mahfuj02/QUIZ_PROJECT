@@ -1,0 +1,16 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+{% csrf_token %}
+<h1>Hello. Its Standing page!</h1>
+<form style="color: bisque;">
+  <h1>User ID: {{ user.id }}</h1>
+  <h3>User Name: {{ user.username }} </h3>
+  <h3> User Email: {{ user.email }} </h3>
+
+</form>
+
+<a href="{% url 'accounts:userupdate' user_id=user.id %}" class="btn btn-primary">update</a>
+
+
+{% endblock %}

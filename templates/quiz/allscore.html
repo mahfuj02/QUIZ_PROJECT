@@ -1,0 +1,17 @@
+{% extends 'pages/base.html' %}
+
+
+{% block content %}
+
+
+
+{% for i in score %}
+
+<div id="container">
+    <div class="row">
+     	<div class="id"> {{ forloop.counter }} </div> <div class="name">{{ i.idname }}</div><div class="score"> {{ i.allscore }} </div>
+	</div>
+</div>
+
+{% endfor %}
+{% endblock %}

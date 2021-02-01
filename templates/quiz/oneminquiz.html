@@ -1,0 +1,47 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+{% csrf_token %}
+
+
+<center><h1 style="color: aliceblue;" id="secs"></h1></center>
+<h2 id="end"></h2>
+
+<script>
+    var countDownDate = 60;
+    
+    var myfunc = setInterval(function() {
+    
+    countDownDate--;    
+    
+      document.getElementById("secs").innerHTML =  countDownDate   
+        
+    if (countDownDate <= 0) {
+        clearInterval(myfunc);
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+    </script>
+
+<form action="" style="color: white;" name = "quizForm" onsubmit = "return submitAnswers(answers = [{% for q in questions %}'{{ q.answer }}',{% endfor %}])">
+    <h1>Working</h1>
+    {% for q in questions %}
+
+        {% if forloop.counter >= 3 %}
+        
+        {% else %}
+        <h3> {{ q.id }}.  {{ q.question }}</h3>
+        <input type = "radio" name = "q{{ q.id }}" value = "a" id = "q1a">   a. {{ q.option1 }}<br><br>
+        <input type = "radio" name = "q{{ q.id }}" value = "b" id = "q1b">   b. {{ q.option2 }}<br><br>       
+        <input type = "radio" name = "q{{ q.id }}" value = "c" id = "q1c">   c. {{ q.option3 }}<br><br>
+        <input type = "radio" name = "q{{ q.id }}" value = "d" id = "q1d">   d. {{ q.option4 }}<br><br>
+        {% endif %}
+
+    
+    {% endfor %}
+
+        <br><br>
+        <input type = "submit" value = "Submit Answer">
+    </form>
+
+{% endblock %}

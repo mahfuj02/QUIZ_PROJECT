@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<center> <form method="POST">
+<h1 class="mt-3 text-center">login</h1>
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+<button type="submit" class="btn btn-primary btn-block btn-sm">login</button>
+
+</form>
+</center>
+{% endblock %}
